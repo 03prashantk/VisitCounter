@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Profile View Incrementer </title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .frames {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        iframe {
+            width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reloading {
+            animation: backgroundSplash 1s forwards;
+        }
+
+        .loaded {
+            animation: backgroundSplash 1s forwards;
+        }
+
+        @keyframes backgroundSplash {
+            0% {
+                background-color: transparent;
+            }
+
+            50% {
+                background-color: #5A5A5A;
+            }
+
+            100% {
+                background-color: transparent;
+            }
+        }
+
+        #counts {
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: fit-content - 10px;
+        }
+
+    </style>
+</head>
+
+
+<body>
+    <h2 id="counts"></h2>
+    
+    <div class="frames">
+        <!-- Adjusted iframes with unique IDs -->
+        <!-- Added different IDs and removed duplicate ones -->
+        <iframe id="iframe1" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe2" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe3" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe4" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe5" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe6" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe7" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe8" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe9" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe10" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe11" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe12" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe13" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe14" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe15" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe16" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe17" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe18" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe19" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe20" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe21" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe22" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe23" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe24" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe25" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe26" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe27" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe28" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe29" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe30" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe31" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe32" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe33" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe34" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe35" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe36" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe37" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe38" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe39" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe40" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe41" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe42" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe43" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe44" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe45" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe46" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe47" src="http://localhost:3000/" frameborder="0"></iframe>
+        <iframe id="iframe48" src="http://localhost:3000/" frameborder="0"></iframe>
+    </div>
+
+
+    <script>
+        const iframes = document.querySelectorAll('iframe');
+        const counts = document.getElementById('counts');
+
+        let count = 0;
+
+        iframes.forEach(iframe => {
+            iframe.addEventListener('load', () => {
+                count++;
+                counts.textContent = `Loaded: ${count}`;
+                iframe.style.backgroundColor = '#5A5A5A';
+                iframe.classList.add('loaded');
+                
+                if (count === iframes.length) {
+                    // Reset all iframes and their background color when all are loaded
+                    count = 0;
+                    counts.textContent = `Loaded: ${count}`;
+                    iframes.forEach(iframe => {
+                        // Refresh iframe
+                        iframe.style.backgroundColor = 'transparent';
+                        iframe.classList.remove('loaded');
+                        iframe.contentWindow.location.reload(true);
+                    });
+                }
+            });
+            
+            // Add animation to iframe when it starts reloading
+            iframe.contentWindow.addEventListener('beforeunload', () => {
+                iframe.style.backgroundColor = 'red';
+                iframe.classList.add('reloading');
+            });
+            
+            // Remove animation class when iframe reload is complete
+            iframe.contentWindow.addEventListener('load', () => {
+                iframe.style.backgroundColor = '#5A5A5A';
+                iframe.classList.remove('reloading');
+            });
+        });
+
+        // check which iframe is refreshing and blink it
+        setInterval(() => {
+            iframes.forEach(iframe => {
+                if (iframe.contentWindow.performance.getEntriesByType('navigation').length === 0) {
+                    iframe.style.backgroundColor = 'red';
+                }
+            });
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
